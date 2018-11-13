@@ -1,0 +1,134 @@
+/**
+ * PowerTip
+ * https://stevenbenner.github.io/jquery-powertip/
+ *
+ * Stylesheet for the monochrome (default) theme.
+ */
+
+#powerTip {
+	cursor: default;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-color: #333;
+	border-color: rgba(0, 0, 0, 0.8);
+	border-radius: 6px;
+	color: #fff;
+	display: none;
+	padding: 10px;
+	position: absolute;
+	white-space: nowrap;
+	z-index: 2147483647;
+}
+#powerTip:before {
+	content: attr(class) " ";
+	position: absolute;
+	height: 0;
+	width: 0;
+	text-indent: 100%;
+	overflow: hidden;
+}
+#powerTip.n:before, #powerTip.s:before {
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	left: 50%;
+	margin-left: -5px;
+}
+#powerTip.e:before, #powerTip.w:before {
+	border-bottom: 5px solid transparent;
+	border-top: 5px solid transparent;
+	margin-top: -5px;
+	top: 50%;
+}
+#powerTip.n:before,
+#powerTip.ne:before, #powerTip.nw:before {
+	bottom: -10px;
+}
+#powerTip.n:before,
+#powerTip.ne:before, #powerTip.nw:before ,
+#powerTip.nw-alt:before, #powerTip.ne-alt:before {
+	border-top-color: inherit;
+	border-top-style: solid;
+	border-top-width: 10px;
+}
+#powerTip.e:before {
+	border-right-color: inherit;
+	border-right-style: solid;
+	border-right-width: 10px;
+	left: -10px;
+}
+#powerTip.s:before,
+#powerTip.se:before, #powerTip.sw:before {
+	top: -10px;
+}
+#powerTip.s:before,
+#powerTip.se:before, #powerTip.sw:before ,
+#powerTip.sw-alt:before, #powerTip.se-alt:before {
+	border-bottom-color: inherit;
+	border-bottom-style: solid;
+	border-bottom-width: 10px;
+}
+#powerTip.w:before {
+	border-left-color: inherit;
+	border-left-style: solid;
+	border-left-width: 10px;
+	right: -10px;
+}
+#powerTip.ne:before, #powerTip.se:before {
+	border-right: 10px solid transparent;
+	border-left: 0;
+	left: 10px;
+}
+#powerTip.nw:before, #powerTip.sw:before {
+	border-left: 10px solid transparent;
+	border-right: 0;
+	right: 10px;
+}
+#powerTip.nw-alt:before, #powerTip.ne-alt:before,
+#powerTip.sw-alt:before, #powerTip.se-alt:before {
+	bottom: -10px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	left: 10px;
+}
+#powerTip.ne-alt:before {
+	left: auto;
+	right: 10px;
+}
+#powerTip.sw-alt:before, #powerTip.se-alt:before {
+	border-top: none;
+	bottom: auto;
+	top: -10px;
+}
+#powerTip.se-alt:before {
+	left: auto;
+	right: 10px;
+}
+
+
+
+#labeltip,.info-s,.info-l,.chosen-results,#yeartip{color:rgba(80,93,104,1);}
+#tip,#labeltip,#yeartip{cursor:default;background-color:#f2f2f2;background-color:rgba(242,242,242,0.9);border-radius:3px;display:none;position:absolute;z-index:2147483647;word-wrap:normal;white-space: pre-line;}
+#tip {padding:10px;}
+#tip,#yeartip {text-align: left;width:160px;}
+#labeltip {text-align: center;padding:5px;}
+#yeartip {position:fixed;padding:10px;}
+#tip:before,#labeltip:before,#yeartip:before{content:"";position:absolute}
+#tip.n:before,#yeartip.n:before,#labeltip.n:before,#tip.s:before,#yeartip.s:before,#labeltip.s:before{border-right:5px solid transparent;border-left:5px solid transparent;left:50%;margin-left:-5px}
+#tip.e:before,#yeartip.e:before,#labeltip.e:before,#tip.w:before,#yeartip.w:before,#labeltip.w:before{border-bottom:5px solid transparent;border-top:5px solid transparent;margin-top:-5px;top:50%}
+#tip.n:before,#yeartip.n:before,#labeltip.n:before{border-top:10px solid #f2f2f2;border-top:10px solid rgba(242,242,242,0.9);bottom:-10px}
+#tip.e:before,#yeartip.e:before,#labeltip.e:before{border-right:10px solid #f2f2f2;border-right:10px solid rgba(242,242,242,0.9);left:-10px}
+#tip.s:before,#yeartip.s:before,#labeltip.s:before{border-bottom:10px solid #f2f2f2;border-bottom:10px solid rgba(242,242,242,0.9);top:-10px}
+#tip.w:before,#yeartip.w:before,#labeltip.w:before{border-left:10px solid #f2f2f2;border-left:10px solid rgba(242,242,242,0.9);right:-10px}
+#tip.ne:before,#yeartip.ne:before,#labeltip.ne:before,#tip.se:before,#yeartip.se:before,#labeltip.se:before{border-right:10px solid transparent;border-left:0;left:10px}
+#tip.nw:before,#yeartip.nw:before,#labeltip.nw:before,#tip.sw:before,#yeartip.sw:before,#labeltip.sw:before{border-left:10px solid transparent;border-right:0;right:10px}
+#tip.ne:before,#yeartip.ne:before,#labeltip.ne:before,#tip.nw:before,#yeartip.nw:before,#labeltip.nw:before{border-top:10px solid #f2f2f2;border-top:10px solid rgba(242,242,242,0.9);bottom:-10px}
+#tip.se:before,#yeartip.se:before,#labeltip.se:before,#tip.sw:before,#yeartip.sw:before,#labeltip.sw:before{border-bottom:10px solid #f2f2f2;border-bottom:10px solid rgba(242,242,242,0.9);top:-10px}
+#tip.nw-alt:before,#yeartip.nw-alt:before,#labeltip.nw-alt:before,#tip.ne-alt:before,#yeartip.ne-alt:before,#labeltip.ne-alt:before,#tip.sw-alt:before,#yeartip.sw-alt:before,#labeltip.sw-alt:before,#tip.se-alt:before,#yeartip.se-alt:before,#labeltip.se-alt:before{border-top:10px solid #f2f2f2;border-top:10px solid rgba(242,242,242,0.9);bottom:-10px;border-left:5px solid transparent;border-right:5px solid transparent;left:10px}
+#tip.ne-alt:before,#yeartip.ne-alt:before,#labeltip.ne-alt:before{left:auto;right:10px}#tip.sw-alt:before,#yeartip.sw-alt:before,#labeltip.sw-alt:before,#tip.se-alt:before,#yeartip.se-alt:before,#labeltip.se-alt:before{border-top:0;border-bottom:10px solid #f2f2f2;border-bottom:10px solid rgba(242,242,242,0.9);bottom:auto;top:-10px}
+#tip.se-alt:before,#yeartip.se-alt:before,#labeltip.se-alt:before{left:auto;right:10px}
+
+.info-label {text-transform: uppercase;display: block;color:rgba(126,134,140,1);}
+.info-l {font-family:'Oswald',sans-serif;margin-top:-5px;display: block;}
+.info-s {font-weight:bold;}
+.info-date {}
+.info-d {display:block;border-top:1px solid rgba(0,0,0,0.2);border-bottom:1px solid rgba(255,255,255,0.2);height:2px;width:180px;position:relative;left:-10px;margin:5px 0px;}

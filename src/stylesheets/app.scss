@@ -1,0 +1,243 @@
+$yellow: rgba(255,204,5,1);
+$blue: rgba(53,193,224,1);
+$orange: rgba(250,170,67,1);
+$red: rgba(213,93,38,1);
+$grey: rgba(153,142,124,1);
+$primary: rgb(90, 106, 117);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    color: $primary;
+    overflow: hidden;
+}
+.header {
+    padding: 64px;
+    display: flex;
+    justify-content: space-between;
+    .left {
+        .logo {
+            font-size: 42px;
+            font-weight: 700;
+            color: $primary;
+            span {
+                color: $yellow;
+            }
+        }
+        .sub {
+            font-size: 14px;
+            margin-top: 8px;
+            opacity: 0.5;
+        }
+    }
+    .right {
+        display: flex;
+        .filter-cause {
+            display: flex;
+            .item {
+                padding: 2px;
+                margin: 3px;
+                margin-left: 13px;
+                cursor: pointer;
+                opacity: 0.8;
+                transition: all 0.2s ease;
+                &:hover {
+                    opacity: 1;
+                }
+                &.active {
+                    opacity: 1;
+                    border: 2px solid $yellow;
+                    &.f_weather {
+                        border: 2px solid $blue;
+                    }
+                    &.f_mechanical {
+                        border: 2px solid $orange;
+                    }
+                    &.f_criminal {
+                        border: 2px solid $red;
+                    }
+                    &.f_unknown {
+                        border: 2px solid $grey;
+                    }
+                }
+            }
+        }
+        .filter-phase {
+            display: none;
+            @extend .filter-cause;
+            margin-right: 50px;
+            opacity: 0.5;
+        }
+    }
+}
+.data {
+    padding: 0px 64px;
+    .years {
+        height: calc(100vh - 300px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .year {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 16px;
+            &.active {
+                .label {
+                    transform: none!important;
+                    opacity: 1!important;
+                    font-weight: 600;
+                }
+            }
+            .label {
+                font-weight: 600;
+                min-width: 50px;
+                font-size: 11px;
+                transition: all 0.5s ease;
+                transition-delay: 1s;
+                cursor: pointer;
+                &.hidden {
+                    transform: translateX(-100px);
+                    opacity: 0;
+                }
+            }
+            .blocks {
+                width: 100%;
+                display: flex;
+                &>div {
+                    height: 16px;
+                    margin-left: 2px;
+                    margin-right: 2px;
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    transition: all 1s ease;
+                    &:hover {
+                        opacity: 1;
+                        z-index: 9;
+                    }
+                    &.locationed {
+                        border-radius: 50%;
+                    }
+                    &.hidden {
+                        width: 0px!important;
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                }
+                .c_weather {
+                    background: $blue;
+                }
+                .c_human_error {
+                    background: $yellow;
+                }
+                .c_mechanical {
+                    background: $orange;
+                }
+                .c_criminal {
+                    background: $red;
+                }
+                .c_unknown {
+                    background: $grey;
+                }
+                .p_unknown {
+                    opacity: 0.2;
+                }
+                .p_suspected {
+                    opacity: 0.4;
+                }
+                .p_probable {
+                    opacity: 0.6;
+                }
+                .p_confirmed {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+.map {
+    background-image: url('../images/worldwide.png');
+    height: 80vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9;
+    width: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 10%;
+    opacity: 0.1;
+    pointer-events: none;
+    transition: all 2s ease;
+    &.active {
+        opacity: 0.75;
+    }
+}
+.tip {
+    font-size: 12px;
+    .info-s {
+        margin-top: 8px;
+        font-weight: 600;
+        display: block;
+        text-transform: capitalize;
+    }
+    .info-l {
+        margin-top: 7px;
+        display: block;
+        font-size: 24px;
+        text-transform: capitalize;
+    }
+}
+.button-sec {
+    position: absolute;
+    right: 64px;
+    bottom: 64px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: $yellow;
+    padding-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "flightrisk-redesign",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/naveenshaji/flightrisk-redesign.git",
+  "author": "Naveen Shaji <xsf.azrael@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "blendid": "^4.4.3"
+  }
+}
